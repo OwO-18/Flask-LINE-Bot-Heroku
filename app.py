@@ -45,7 +45,6 @@ def handle_message(event):
             preview_image_url = url
         )
         line_bot_api.reply_message(event.reply_token, image_message)
-
         return 0
-    
+
     line_bot_api.reply_message(event.reply_token, reply)
