@@ -38,4 +38,13 @@ def handle_message(event):
     # Send To Line
     reply = TextSendMessage(text='Hello World!')
     
+    if event.message.text == "喵":
+        image_message = ImageSendMessage(
+            original_content_url = 'https://blog.accupass.com/wp-content/uploads/2017/03/1_120122230539_1.jpg',
+            preview_image_url = 'https://blog.accupass.com/wp-content/uploads/2017/03/1_120122230539_1.jpg'
+        )
+        line_bot_api.reply_message(event.reply_token, image_message)
+
+        return 0
+    
     line_bot_api.reply_message(event.reply_token, reply)
