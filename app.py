@@ -48,8 +48,12 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, image_message)
         return 0
     
-    if event.message.text == "喵喵":
-        reply = TextSendMessage(text = '喵喵')
+    elif event.message.text == "喵喵":
+        reply = TextSendMessage(text = '汪汪')
+        line_bot_api.reply_message(event.reply_token, reply)
+        
+    elif event.message.text == "第一關":
+        reply = TextSendMessage(text = '開始')
         line_bot_api.reply_message(event.reply_token, reply)
 
     line_bot_api.reply_message(event.reply_token, reply)
