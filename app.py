@@ -53,7 +53,12 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, reply)
         
     elif event.message.text == "第一關":
-        reply = TextSendMessage(text = '開始')
-        line_bot_api.reply_message(event.reply_token, reply)
+        url = 'https://i.imgur.com/iSNZt1l.png'
+        image_message = ImageSendMessage(
+            original_content_url = url,
+            preview_image_url = url
+        )
+        line_bot_api.reply_message(event.reply_token, image_message)
+        return 0
 
     line_bot_api.reply_message(event.reply_token, reply)
