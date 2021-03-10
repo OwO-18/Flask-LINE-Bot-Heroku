@@ -61,4 +61,38 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, image_message)
         return 0
 
+    if event.message.text == "start":
+        task_fail = true
+        while task_fail:
+            if stage_1() == 1
+                reply = TextSendMessage(text = '恭喜答對')
+                line_bot_api.reply_message(event.reply_token, reply)
+                task_fail = false
+            
+            if stage_1() == 0
+                reply = TextSendMessage(text = '不對噢')
+                line_bot_api.reply_message(event.reply_token, reply)
+        
+        reply = TextSendMessage(text = '第二關')
+        line_bot_api.reply_message(event.reply_token, reply)
+    
     line_bot_api.reply_message(event.reply_token, reply)
+
+def stage_1():
+    story = TextSendMessage(test = '第一段故事')
+    line_bot_api.reply_message(event.reply_token, story)
+    
+    if event.message.text == "答案“:
+        reply = TextSendMessage(text = '恭喜答對')
+        line_bot_api.reply_message(event.reply_token, reply)
+        return 1
+        
+    else 
+        reply = TextSendMessage(text = '不對喔')
+        line_bot_api.reply_message(event.reply_token, reply)
+        return 0
+                                
+    
+    
+    
+    
